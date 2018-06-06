@@ -1,0 +1,6 @@
+*.tar
+*.tar.gz
+/data
+/.vscode
+.DS_Store
+
