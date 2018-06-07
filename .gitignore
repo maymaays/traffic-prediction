@@ -3,4 +3,5 @@
 /data
 /.vscode
 .DS_Store
+/output
 
