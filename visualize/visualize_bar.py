@@ -24,7 +24,7 @@ import pandas as pd
 #             str(round((i.get_height() / 100) * 100, 2)) + '%', fontsize=10,
 #                 color='#777887')
 
-gps = pd.read_csv('./data/report_day.csv')
+# gps = pd.read_csv('./data/report_day.csv')
 
 # for i in range(3):
 #     if i == 0:
