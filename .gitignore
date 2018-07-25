@@ -6,6 +6,7 @@
 .DS_Store
 /output
 /order
+/zone
 *.txt
 *.log
 *.csv
