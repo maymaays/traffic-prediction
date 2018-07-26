@@ -27,7 +27,6 @@ gps.to_csv('./gps_hour/gps_hour_day7.csv', header=None, index=False)
 # gps = read_file('./gps_hour/gps_hour_day2.csv', ['vehicle_id', 'order_id', 'universal_time', 'longitude', 'latitude'])
 # print(gps)
 
-
 # count (A-, B)
 # count = 0
 # for _, order_row in order.head(1).iterrows():

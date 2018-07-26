@@ -55,7 +55,6 @@ gps = sqlContext.read.load('./data/raw_data/02a10/11-03/gps_20161103',
 # gps = reduce(lambda gps, idx: gps.withColumnRenamed(
 #                 oldrows[idx], newrows[idx]), range(len(oldrows)), gps)   
 
-
 gps = columnrename(gps, ['vehicle_id', 'order_id', 
                 'universal_time', 'longitude', 'latitude'])
 
@@ -78,7 +77,6 @@ order_join = show_table("SELECT order.order_id, order.departure_time, order.arri
 
 # order_join = sqlContext.sql("SELECT order.order_id, order.departure_time, order.arrival_time, gps.universal_time FROM order LEFT JOIN gps ON order.order_id = gps.order_id")
 order_join.registerTempTable('order_join')
-
 
 # select the minimum of universal time for each id
 # order_select = sqlContext.sql("SELECT order_id, departure_time, min(universal_time) AS min_universal_time FROM order_join GROUP BY order_id, departure_time")
@@ -135,8 +133,6 @@ order_weak.count()
 
 # total = 181172
 
-
-
 order_normal.repartition(1).write.csv("normal_test_id", sep="|")
 
 order_aminus.repartition(1).write.csv("aminus_id", sep="|")
@@ -144,6 +140,5 @@ order_aminus.repartition(1).write.csv("aminus_id", sep="|")
 order_bminus.repartition(1).write.csv("bminus_id", sep="|")
 
 order_weak.repartition(1).write.csv("weak_id", sep="|")
-
 
 # day 2: 67171, 54155, 53540, 11395, total = 186261
